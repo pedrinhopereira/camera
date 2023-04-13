@@ -1,111 +1,76 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Quiz</title>
-    <style>
-      body {
-        background-color: black;
-        color: white;
-        font-size: 150%;
-      }
-      h1 {
-        text-align: center;
-      }
-      .container {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-      }
-      .quiz {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        max-width: 600px;
-        width: 100%;
-      }
-      .quiz label {
-        margin: 10px 0;
-      }
-      .quiz input[type="radio"] {
-        display: none;
-      }
-      .quiz label span {
-        padding: 10px 20px;
-        border: 2px solid white;
-        border-radius: 5px;
-        cursor: pointer;
-      }
-      .quiz label span:hover {
-        background-color: white;
-        color: black;
-      }
-      .quiz input[type="radio"]:checked + span {
-        background-color: white;
-        color: black;
-      }
-      .quiz button {
-        margin: 10px 0;
-        padding: 10px 20px;
-        border: 2px solid white;
-        border-radius: 5px;
-        background-color: transparent;
-        color: white;
-        cursor: pointer;
-      }
-      .quiz button:hover {
-        background-color: white;
-        color: black;
-      }
-      #resposta {
-        margin-top: 20px;
-        text-align: center;
-      }
-      #resposta h3 {
-        margin-bottom: 10px;
-      }
-      #resposta button {
-        margin-right: 5px;
-        margin-bottom: 10px;
-        padding: 10px 20px;
-        width: calc(20% - 5px);
-      }
-      #resposta button:last-child {
-        margin-right: 0;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="container">
-      <div class="quiz">
-        <h1>Quiz</h1>
-        <label>
-          <input type="radio" name="formato" value="open_gate">
-          <span>Open Gate</span>
-        </label>
-        <label>
-          <input type="radio" name="formato" value="16_9">
-          <span>16:9</span>
-        </label>
-        <label>
-          <input type="radio" name="formato" value="anamorphic">
-          <span>Anamorphic</span>
-        </label>
-        <div id="resposta"></div>
-      </div>
-    </div>
-    <script>
-      const respostaDiv = document.getElementById('resposta');
+<head>
+	<meta charset="UTF-8">
+	<title>Quiz</title>
+	<style>
+		body {
+			background-color: black;
+			color: white;
+			font-size: 2.5vw;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			height: 100vh;
+			margin: 0;
+			padding: 0;
+		}
 
-      document.querySelectorAll('input[name="formato"]').forEach((radio) => {
-        radio.addEventListener('change', () => {
-          respostaDiv.innerHTML = '';
-          if (radio.value === 'open_gate') {
-            respostaDiv.innerHTML = 'Você pode filmar até 30FPS';
-          } else if (radio.value === '16_9') {
-            respostaDiv.innerHTML = `
-              <h3>Qual resolução?</h3>
-              <div style
+		button {
+			font-size: 120%;
+			margin: 0.5em;
+			padding: 0.5em;
+			background-color: white;
+			color: black;
+			border: none;
+			cursor: pointer;
+		}
+
+		button:hover {
+			background-color: black;
+			color: white;
+		}
+
+		#resposta {
+			margin-top: 1em;
+		}
+	</style>
+</head>
+<body>
+	<h2>Em qual formato você quer filmar?</h2>
+	<div>
+		<input type="radio" id="open_gate" name="formato" value="open_gate">
+		<label for="open_gate">Open Gate</label>
+		<input type="radio" id="16_9" name="formato" value="16_9">
+		<label for="16_9">16:9</label>
+		<input type="radio" id="anamorphic" name="formato" value="anamorphic">
+		<label for="anamorphic">Anamorphic</label>
+	</div>
+	<div id="resposta"></div>
+	<script>
+		const respostaDiv = document.getElementById('resposta');
+		const formatoRadios = document.querySelectorAll('input[name="formato"]');
+
+		formatoRadios.forEach((radio) => {
+			radio.addEventListener('change', () => {
+				respostaDiv.innerHTML = '';
+				if (radio.value === 'open_gate') {
+					respostaDiv.innerHTML = 'Você pode filmar até 30FPS';
+				} else if (radio.value === '16_9') {
+					respostaDiv.innerHTML = `
+						<h3 style="margin-top: 1em;">Qual resolução?</h3>
+						<div style="display: flex; flex-wrap: wrap; justify-content: center;">
+							<button onclick="mostrarResposta('UHD')" style="width: 10em;">UHD</button>
+							<button onclick="mostrarResposta('3.2K')" style="width: 10em;">3.2K</button>
+							<button onclick="mostrarResposta('2.8K')" style="width: 10em;">2.8K</button>
+							<button onclick="mostrarResposta('2K')" style="width: 10em;">2K</button>
+							<button onclick="mostrarResposta('HD')" style="width: 10em;">HD</button>
+						</div>
+					`;
+				} else if (radio.value === 'anamorphic') {
+					respostaDiv.innerHTML = `
+						<h3 style="margin-top: 1em;">Qual resolução?</h3>
+						<div style="display: flex; flex-wrap: wrap; justify-content: center;">
+							<button onclick="mostrarResposta('UHD')" style="width: 10em;">UHD</button>
+							<button onclick="mostrarResposta('3.2K')" style="width: 
