@@ -1,25 +1,56 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>ALEXA MINI</title>
+	<style>
+      html, body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        background-color: black;
+      }
+      h1 {
+        margin-bottom: 20px;
+        margin-top: 30px;
+        margin-left: 130px;
+        text-align: left;
+        padding: 4;
+        font-size: 58px;
+        color: white;
+       }
+ #backButton {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        width: 50px;
+        height: 50px;
+        font-size: 28px;
+        color: black;
+        background-color: white;
+        border: 1px solid white;
+        border-radius: 50%;
+        margin-top: 5px;
+        margin-bottom: 10px;
+        margin-right: 10px;
+        margin-left: 10px;
+      }
 	<style type="text/css">
 		/* insira aqui o código CSS da sua página atual */
 		align: center;
 		height: calc(100% - 60px);
 		.tg  {border-collapse:collapse;border-spacing:0;}
-.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+.tg td{border-color:white;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:24px;
   overflow:hidden;padding:3px 6px;word-break:normal;}
-.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+.tg th{border-color:white;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:24px;
   font-weight:normal;overflow:hidden;padding:3px 6px;word-break:normal;}
-.tg .tg-cly1{text-align:left;vertical-align:middle}
-.tg .tg-ylak{background-color:#c5ffc4;border-color:inherit;text-align:left;vertical-align:middle}
-.tg .tg-9wq8{border-color:inherit;text-align:center;vertical-align:middle}
+.tg .tg-cly1{color:#ffffff;text-align:left;vertical-align:middle}
+.tg .tg-ylak{background-color:#c5ffc4;border-color:white;text-align:left;vertical-align:middle}
+.tg .tg-9wq8{border-color:white;text-align:center;vertical-align:middle}
 .tg .tg-ms6p{background-color:#c5ffc4;border-color:#656565;text-align:left;vertical-align:middle}
-.tg .tg-4qoz{background-color:#ecf4ff;border-color:inherit;text-align:left;vertical-align:middle}
+.tg .tg-4qoz{background-color:#ecf4ff;border-color:white;text-align:left;vertical-align:middle}
 .tg .tg-nrix{text-align:center;vertical-align:middle}
 .tg .tg-r6x4{background-color:#ecf4ff;text-align:left;vertical-align:middle}
 .tg .tg-wvf5{background-color:#c5ffc4;text-align:left;vertical-align:middle}
-.tg .tg-n0lo{background-color:#c5ffc4;border-color:#000000;text-align:left;vertical-align:middle}
+.tg .tg-n0lo{background-color:#c5ffc4;border-color:white;text-align:left;vertical-align:middle}
 .tg .tg-rq9j{background-color:#cbcefb;text-align:left;vertical-align:middle}
 .tg .tg-5qzi{background-color:#ffccc9;text-align:left;vertical-align:middle}
 	</style>
@@ -34,11 +65,11 @@
 	<table class="tg">
 	<thead>
 	  <tr>
-	    <th class="tg-0lax">CODEC</th>
-	    <th class="tg-0lax">JANELA</th>
-	    <th class="tg-0pky">RESOLUÇÃO</th>
-	    <th class="tg-0pky">FORMATO DE GRAVAÇÃO</th>
-	    <th class="tg-0lax">MÁX. FPS</th>
+	    <th class="tg-cly1">CODEC</th>
+	    <th class="tg-cly1">JANELA</th>
+	    <th class="tg-cly1">RESOLUÇÃO</th>
+	    <th class="tg-cly1">FORMATO DE GRAVAÇÃO</th>
+	    <th class="tg-cly1">MÁX. FPS</th>
 	  </tr>
 	</thead>
 <tbody>
@@ -136,3 +167,7 @@
   </tr>
 </tbody>
 </table>
+</div>
+    <button id="backButton" onclick="window.history.back()">←</button>
+  </body>
+</html>
