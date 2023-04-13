@@ -2,7 +2,7 @@
   "name": “CAMERA FPS,
   "short_name": “CFPS”,
   "description": “MAXIMO DO FPS DAS CAMERAS”,
-  "start_url": "./index.html",
+  "start_url": "https://pedrinhopereira.github.io/camera/index.html",
   "icons": [
     {
       "src": "icone.png",
