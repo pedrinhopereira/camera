@@ -1,9 +1,9 @@
 {
-  "name": "MAXIMO FPS",
-  "short_name": "MF",
-  "theme_color": "#000000",
-  "background_color": "#000000",
-  "display": "standalone",
-  "orientation": "portrait"
-  "start_url": "/https://pedrinhopereira.github.io/camera/index.html"
+"theme_color" : "#000000"
+"background_color" : "#000000"
+"display" : "standalone"
+"scope" : "/"
+"start_url" : "/https://pedrinhopereira.github.io/camera/index.html"
+"name" : "Maximo FPS"
+"short_name" : "MF"
 }
