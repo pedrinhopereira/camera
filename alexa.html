@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alexa Mini</title>
+    <link rel="manifest" href="manifest.json">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="MF">
+    <meta name="apple-mobile-web-app-title" content="MF">
+    <meta name="theme-color" content="#000000">
+    <meta name="msapplication-navbutton-color" content="#000000">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="msapplication-starturl" content="/https://pedrinhopereira.github.io/camera/index.html">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" sizes="192x192" href="icone.png">
+    <link rel="apple-touch-icon" sizes="192x192" href="icone.png">
+    <style>
+      html, body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        background-color: black;
+      }
+      .container {
+        height: calc(100% - 40px);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      h1 {
+        margin-bottom: 20px;
+        margin-top: 20px;
+        text-align: center;
+        padding: 0;
+        font-size: 18px;
+        color: white;
+      }
+      button {
+        width: 200px;
+        height: 50px;
+        font-size: 28px;
+        color: black;
+        background-color: white;
+        border: 1px solid white;
+        border-radius: 5px;
+        margin-top: 5px;
+        margin-bottom: 10px;
+        margin-right: 10px;
+        margin-left: 10px;
+      }
+      #backButton {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        width: 50px;
+        height: 50px;
+        font-size: 28px;
+        color: black;
+        background-color: white;
+        border: 1px solid white;
+        border-radius: 50%;
+        margin-top: 5px;
+        margin-bottom: 10px;
+        margin-right: 10px;
+        margin-left: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="titulo">Escolha a Alexa que deseja:</h1>
+    <div class="container">
+      <button onclick="window.location.href='alexamini.html'">Alexa Mini</button>
+      <button onclick="window.location.href='alexaminilf.html'">Alexa Mini LF</button>
+      <button onclick="window.location.href='alexa35.html'">Alexa 35</button>
+    </div>
+    <button id="backButton" onclick="window.history.back()">←</button>
+  </body>
+</html>
