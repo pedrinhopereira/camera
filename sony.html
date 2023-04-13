@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Quiz</title>
+    <style>
+      body {
+        background-color: black;
+        color: white;
+        font-family: Arial, sans-serif;
+      }
+
+      h1, h2, h3 {
+        color: white;
+        font-weight: normal;
+      }
+
+      button {
+        background-color: #333;
+        border: none;
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #444;
+      }
+
+      #resposta {
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Quiz</h1>
+    <p>Qual formato você está filmando?</p>
+    <div>
+      <input type="radio" id="open_gate" name="formato" value="open_gate">
+      <label for="open_gate">Open Gate</label>
+      <br>
+      <input type="radio" id="16_9" name="formato" value="16_9">
+      <label for="16_9">16:9</label>
+      <br>
+      <input type="radio" id="anamorphic" name="formato" value="anamorphic">
+      <label for="anamorphic">Anamorphic</label>
+    </div>
+    <div id="resposta"></div>
+    <script>
+      const respostaDiv = document.getElementById('resposta');
+
+      document.querySelectorAll('input[name="formato"]').forEach((radio) => {
+        radio.addEventListener('change', () => {
+          respostaDiv.innerHTML = '';
+          if (radio.value === 'open_gate') {
+            respostaDiv.innerHTML = 'Você pode filmar até 30FPS';
+          } else if (radio.value === '16_9') {
+            respostaDiv.innerHTML = `
+              <h3>Qual resolução?</h3>
+              <button onclick="mostrarResposta('UHD')">UHD</button>
+              <button onclick="mostrarResposta('3.2K')">3.2K</button>
+              <button onclick="mostrarResposta('2.8K')">2.8K</button>
+              <button onclick="mostrarResposta('2K')">2K</button>
+              <button onclick="mostrarResposta('HD')">HD</button>
+            `;
+          } else if (radio.value === 'anamorphic') {
+            respostaDiv.innerHTML = `
+              <h3>Qual resolução?</h3>
+              <button onclick="mostrarResposta('UHD')">UHD</button>
+              <button onclick="mostrarResposta('3.2K')">3.2K</button>
+              <button onclick="mostrarResposta('2.8K')">2.8K</button>
+            `;
+          }
+        });
+      });
+
+      function mostrarResposta(resolucao) {
+        respostaDiv.innerHTML = `Você pode filmar até 30FPS no codec 4444XQ e 60FPS nos outros codecs na resolução ${resolucao}`;
+      }
+    </script>
+  </body>
+</html>
