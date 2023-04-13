@@ -1,67 +1,51 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <title>Alexa Mini</title>
     <meta charset="UTF-8">
-    <title>Quiz</title>
     <style>
       body {
         background-color: black;
         color: white;
-        font-family: Arial, sans-serif;
+        font-size: 24px;
       }
-
-      h1, h2, h3 {
-        color: white;
-        font-weight: normal;
-      }
-
       button {
-        background-color: #333;
-        border: none;
-        color: white;
-        padding: 10px 20px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 16px;
-        margin: 4px 2px;
-        cursor: pointer;
+        background-color: white;
+        color: black;
+        font-size: 24px;
+        margin: 5px;
       }
-
-      button:hover {
-        background-color: #444;
-      }
-
       #resposta {
-        margin-top: 20px;
+        margin-top: 10px;
+        font-size: 24px;
+      }
+      #botoes {
+        position: sticky;
+        bottom: 0;
+        margin-top: 10px;
       }
     </style>
   </head>
   <body>
-    <h1>Quiz</h1>
-    <p>Qual formato você está filmando?</p>
-    <div>
-      <input type="radio" id="open_gate" name="formato" value="open_gate">
-      <label for="open_gate">Open Gate</label>
-      <br>
-      <input type="radio" id="16_9" name="formato" value="16_9">
-      <label for="16_9">16:9</label>
-      <br>
-      <input type="radio" id="anamorphic" name="formato" value="anamorphic">
-      <label for="anamorphic">Anamorphic</label>
-    </div>
+    <h2>Qual formato você quer filmar?</h2>
+    <input type="radio" name="formato" value="open_gate"> Open Gate<br>
+    <input type="radio" name="formato" value="16_9"> 16:9<br>
+    <input type="radio" name="formato" value="anamorphic"> Anamorphic<br>
+    <div id="botoes"></div>
     <div id="resposta"></div>
     <script>
       const respostaDiv = document.getElementById('resposta');
+      const botoesDiv = document.getElementById('botoes');
 
       document.querySelectorAll('input[name="formato"]').forEach((radio) => {
         radio.addEventListener('change', () => {
           respostaDiv.innerHTML = '';
           if (radio.value === 'open_gate') {
             respostaDiv.innerHTML = 'Você pode filmar até 30FPS';
+            botoesDiv.innerHTML = '';
           } else if (radio.value === '16_9') {
-            respostaDiv.innerHTML = `
-              <h3>Qual resolução?</h3>
+            respostaDiv.innerHTML = `<h3>Qual resolução?</h3>`;
+            botoesDiv.innerHTML = `
               <button onclick="mostrarResposta('UHD')">UHD</button>
               <button onclick="mostrarResposta('3.2K')">3.2K</button>
               <button onclick="mostrarResposta('2.8K')">2.8K</button>
@@ -69,8 +53,8 @@
               <button onclick="mostrarResposta('HD')">HD</button>
             `;
           } else if (radio.value === 'anamorphic') {
-            respostaDiv.innerHTML = `
-              <h3>Qual resolução?</h3>
+            respostaDiv.innerHTML = `<h3>Qual resolução?</h3>`;
+            botoesDiv.innerHTML = `
               <button onclick="mostrarResposta('UHD')">UHD</button>
               <button onclick="mostrarResposta('3.2K')">3.2K</button>
               <button onclick="mostrarResposta('2.8K')">2.8K</button>
