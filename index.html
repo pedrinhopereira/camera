@@ -5,8 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página Inicial</title>
     <link rel="manifest" href="manifest.json">
+    <style>
+      html, body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        background-color: black;
+      }
+      .container {
+        height: calc(100% - 40px);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      h1 {
+        margin: 0;
+        padding: 0;
+        font-size: 16px;
+        color: white;
+      }
+      button {
+        width: 200px;
+        height: 150px;
+        font-size: 24px;
+        color: black;
+        background-color: white;
+        border: 1px solid white;
+        border-radius: 5px;
+        margin-top: 50px;
+      }
+    </style>
   </head>
-  <body style="background-color:white;">
-    <button style="position:absolute; top:50px; left:50px; margin-top:50px; margin-left:50px; width:500px; height:500px; font-size:24px;" onclick="window.location.href='alexamini.html'">Alexa</button>
+  <body>
+    <h1 style="margin-top: 20px; margin-left: 20px; width: 70px; height: 35px;">Máximo FPS</h1>
+    <div class="container">
+      <button onclick="window.location.href='alexamini.html'">Alexa</button>
+    </div>
   </body>
 </html>
