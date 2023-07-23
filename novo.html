@@ -1,76 +1,36 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<meta charset="UTF-8">
-	<title>Quiz</title>
-	<style>
-		body {
-			background-color: black;
-			color: white;
-			font-size: 2.5vw;
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			justify-content: center;
-			height: 100vh;
-			margin: 0;
-			padding: 0;
-		}
+  <!--  This source code is exported from pxCode, you can get more document from https://www.pxcode.io  -->
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
-		button {
-			font-size: 120%;
-			margin: 0.5em;
-			padding: 0.5em;
-			background-color: white;
-			color: black;
-			border: none;
-			cursor: pointer;
-		}
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
 
-		button:hover {
-			background-color: black;
-			color: white;
-		}
+    <!-- Please DO NOT remove this line, all link and script tags will be merged to here -->
 
-		#resposta {
-			margin-top: 1em;
-		}
-	</style>
-</head>
-<body>
-	<h2>Em qual formato você quer filmar?</h2>
-	<div>
-		<input type="radio" id="open_gate" name="formato" value="open_gate">
-		<label for="open_gate">Open Gate</label>
-		<input type="radio" id="16_9" name="formato" value="16_9">
-		<label for="16_9">16:9</label>
-		<input type="radio" id="anamorphic" name="formato" value="anamorphic">
-		<label for="anamorphic">Anamorphic</label>
-	</div>
-	<div id="resposta"></div>
-	<script>
-		const respostaDiv = document.getElementById('resposta');
-		const formatoRadios = document.querySelectorAll('input[name="formato"]');
+    <link rel="stylesheet" type="text/css" href="/css/common.css" />
+    <link rel="stylesheet" type="text/css" href="/css/fonts.css" />
 
-		formatoRadios.forEach((radio) => {
-			radio.addEventListener('change', () => {
-				respostaDiv.innerHTML = '';
-				if (radio.value === 'open_gate') {
-					respostaDiv.innerHTML = 'Você pode filmar até 30FPS';
-				} else if (radio.value === '16_9') {
-					respostaDiv.innerHTML = `
-						<h3 style="margin-top: 1em;">Qual resolução?</h3>
-						<div style="display: flex; flex-wrap: wrap; justify-content: center;">
-							<button onclick="mostrarResposta('UHD')" style="width: 10em;">UHD</button>
-							<button onclick="mostrarResposta('3.2K')" style="width: 10em;">3.2K</button>
-							<button onclick="mostrarResposta('2.8K')" style="width: 10em;">2.8K</button>
-							<button onclick="mostrarResposta('2K')" style="width: 10em;">2K</button>
-							<button onclick="mostrarResposta('HD')" style="width: 10em;">HD</button>
-						</div>
-					`;
-				} else if (radio.value === 'anamorphic') {
-					respostaDiv.innerHTML = `
-						<h3 style="margin-top: 1em;">Qual resolução?</h3>
-						<div style="display: flex; flex-wrap: wrap; justify-content: center;">
-							<button onclick="mostrarResposta('UHD')" style="width: 10em;">UHD</button>
-							<button onclick="mostrarResposta('3.2K')" style="width: 
+    <link rel="stylesheet" type="text/css" href="/css/UntitledPage.css" />
+
+    <script type="text/javascript" src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/sticky-js@1.3.0/dist/sticky.min.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/headroom.js@0.12.0/dist/headroom.min.js"></script>
+  </head>
+
+  <body class="flex-column">
+    <div class="untitled-page root"></div>
+    <script type="text/javascript">
+      AOS.init();
+      new Sticky('.sticky-effect');
+    </script>
+  </body>
+</html>
