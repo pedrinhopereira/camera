@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Quiz</title>
+	<style>
+		body {
+			background-color: black;
+			color: white;
+			font-size: 2.5vw;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			height: 100vh;
+			margin: 0;
+			padding: 0;
+		}
+
+		button {
+			font-size: 120%;
+			margin: 0.5em;
+			padding: 0.5em;
+			background-color: white;
+			color: black;
+			border: none;
+			cursor: pointer;
+		}
+
+		button:hover {
+			background-color: black;
+			color: white;
+		}
+
+		#resposta {
+			margin-top: 1em;
+		}
+	</style>
+</head>
+<body>
+	<h2>Em qual formato você quer filmar?</h2>
+	<div>
+		<input type="radio" id="open_gate" name="formato" value="open_gate">
+		<label for="open_gate">Open Gate</label>
+		<input type="radio" id="16_9" name="formato" value="16_9">
+		<label for="16_9">16:9</label>
+		<input type="radio" id="anamorphic" name="formato" value="anamorphic">
+		<label for="anamorphic">Anamorphic</label>
+	</div>
+	<div id="resposta"></div>
+	<script>
+		const respostaDiv = document.getElementById('resposta');
+		const formatoRadios = document.querySelectorAll('input[name="formato"]');
+
+		formatoRadios.forEach((radio) => {
+			radio.addEventListener('change', () => {
+				respostaDiv.innerHTML = '';
+				if (radio.value === 'open_gate') {
+					respostaDiv.innerHTML = 'Você pode filmar até 30FPS';
+				} else if (radio.value === '16_9') {
+					respostaDiv.innerHTML = `
+						<h3 style="margin-top: 1em;">Qual resolução?</h3>
+						<div style="display: flex; flex-wrap: wrap; justify-content: center;">
+							<button onclick="mostrarResposta('UHD')" style="width: 10em;">UHD</button>
+							<button onclick="mostrarResposta('3.2K')" style="width: 10em;">3.2K</button>
+							<button onclick="mostrarResposta('2.8K')" style="width: 10em;">2.8K</button>
+							<button onclick="mostrarResposta('2K')" style="width: 10em;">2K</button>
+							<button onclick="mostrarResposta('HD')" style="width: 10em;">HD</button>
+						</div>
+					`;
+				} else if (radio.value === 'anamorphic') {
+					respostaDiv.innerHTML = `
+						<h3 style="margin-top: 1em;">Qual resolução?</h3>
+						<div style="display: flex; flex-wrap: wrap; justify-content: center;">
+							<button onclick="mostrarResposta('UHD')" style="width: 10em;">UHD</button>
+							<button onclick="mostrarResposta('3.2K')" style="width: 
